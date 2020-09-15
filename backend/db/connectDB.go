@@ -37,7 +37,7 @@ func CheckupConnection() error {
 }
 
 func GoDotEnvVariable(key string) string {
-	err := godotenv.Load(".envs/.local/.env")
+	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
