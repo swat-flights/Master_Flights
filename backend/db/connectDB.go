@@ -37,7 +37,7 @@ func CheckupConnection() error {
 }
 
 func GoDotEnvVariable(key string) string {
-	err := godotenv.Load(".envs/.local/.postgres")
+	err := godotenv.Load(".envs/.local/.env")
 	if err != nil {
 		log.Fatalf("Error loading .env file")
 	}
