@@ -1,0 +1,41 @@
+.DiscountCard
+    max-width: 200px
+    margin: 0 20px
+    height: 300px
+    border-radius: 12px
+    position: relative
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
+
+    &__image
+        margin: 0px
+        height: 75%
+        
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            border-radius: 12px 12px 0 0
+
+    &__description
+        padding: 10px 15px
+        /** height: 72px **/
+    
+    &__score
+        display: flex
+        align-items: center
+
+        span 
+            margin-right: 10px
+
+    &__price
+        border-radius: 25px
+        background: linear-gradient(0deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%)
+        color: white
+        font-weight: bold
+        padding: 6px 18px
+        position: absolute
+        bottom: 64px
+        right: 12px
+    
+h3 
+    margin: 0 0 5px
