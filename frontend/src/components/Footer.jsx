@@ -4,8 +4,6 @@ import './styles/Footer.sass';
 
 const Footer = () => (
   <>
-    <div className="lineBreaker"> </div>
-
     <div className="Footer">
       <div className="Footer__container">
         <div className="Footer__logo">
