@@ -13,7 +13,7 @@
         display: inherit
         
         &__item
-            margin-left: 50px
+            margin: 0 25px
         
         ul
             list-style: none
@@ -23,6 +23,7 @@
     max-width: 1200px
     margin: 0 auto
     display: flex
+    flex-wrap: wrap
     justify-content: space-between
 
 
@@ -35,3 +36,8 @@
     &__socialicons
         display: flex
         align-items: center
+
+
+@media (max-width: $mid-breakpoint)
+    .Footer__container
+        justify-content: center
