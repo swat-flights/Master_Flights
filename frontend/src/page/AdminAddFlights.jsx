@@ -17,7 +17,11 @@ const AdminAddFlights = () => {
           <AdminSidebarButton action="Editar Vuelos" />
         </AdminSidebar>
 
-        <AdminForms />
+        <AdminForms>
+          <button className="Button__Create" type="button">
+            CREAR VUELO
+          </button>
+        </AdminForms>
       </div>
 
       <AdminFooter />

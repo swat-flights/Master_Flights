@@ -4,7 +4,7 @@ import AdminScheduleButton from './AdminScheduleButton';
 import AdminSectionTitle from './AdminSectionTitle';
 import './styles/AdminForms.sass';
 
-const AdminForms = () => {
+const AdminForms = ({ children }) => {
   return (
     <div className="Forms">
       <div className="Forms__Container">
@@ -43,10 +43,7 @@ const AdminForms = () => {
             <input placeholder="..." />
           </div>
         </div>
-
-        <button className="Button__Create" type="button">
-          CREAR VUELO
-        </button>
+        {children}
       </div>
     </div>
   );
