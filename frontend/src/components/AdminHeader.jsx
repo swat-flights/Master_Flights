@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../assets/logo.png';
 import './styles/AdminHeader.sass';
 
-const AdminHeader = () => {
+const AdminHeader = ({ headerTitle }) => {
   return (
     <div className="Header">
       <div className="Header__container">
@@ -10,9 +10,9 @@ const AdminHeader = () => {
           <img className="Header__logo-img" src={Logo} alt="logo" />
           <p className="Header__logo-title">ADMINISTRADOR</p>
         </div>
-        <h2 className="Header__title">Creación de Vuelos</h2>
+        <h1 className="Header__title">{headerTitle}</h1>
         <div className="Header__userItems">
-          <a className="Header__logout" href="url">
+          <a className="Header__logout" href="/">
             Cerrar Sesión
           </a>
           <span className="material-icons">account_circle</span>

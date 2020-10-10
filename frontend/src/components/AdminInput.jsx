@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles/AdminInput.sass';
 
-const AdminInput = () => {
+const AdminInput = ({ title, placeHolder }) => {
   return (
     <div className="Labels">
-      <p>Lorem ipsum</p>
-      <input placeholder="Lorem ipsum" />
+      <p>{title}</p>
+      <input placeholder={placeHolder} />
     </div>
   );
 };

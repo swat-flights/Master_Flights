@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles/AdminScheduleButton.sass';
 
-const AdminScheduleButton = () => {
+const AdminScheduleButton = ({ day }) => {
   return (
     <div className="Select">
       <input type="button" />
-      <p>Monday</p>
+      <p>{day}</p>
     </div>
   );
 };
