@@ -4,7 +4,7 @@ import './styles/AdminScheduleButton.sass';
 const AdminScheduleButton = ({ day }) => {
   return (
     <div className="Select">
-      <input type="button" />
+      <input className="Select__input" type="checkbox" />
       <p>{day}</p>
     </div>
   );
