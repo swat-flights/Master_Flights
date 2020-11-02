@@ -8,7 +8,7 @@ const FlightCard = () => {
       <div className="flightCard__container">
         <div className="flightCard__image">
           <img
-            src="https://co.staticontent.com/flights-images/18.67.5/common/airlines/25x25/UA.png"
+            src="https://co.staticontent.com/flights-images/18.83.6/common/airlines/25x25/AA.png"
             alt=""
           />
         </div>
@@ -27,10 +27,11 @@ const FlightCard = () => {
           <h3 className="flightCard__destination__city">Bogota</h3>
           <h3 className="flightCard__destination__airport">El dorado (DOR)</h3>
         </div>
+      </div>
+      <div className="flightCard__price">
         <hr />
-        <div className="flightCard__price">
-          <h2>$ 100</h2>
-        </div>
+        <span className="flightCard__price__title">Precio: </span>
+        <span>$ 100</span>
       </div>
     </div>
   );

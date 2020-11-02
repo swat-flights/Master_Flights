@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/FilterMenu.sass';
 
-const FilterMenu = () => {
+const FilterMenu = ({ closeBtn }) => {
   return (
     <div className="filterMenu">
       <div className="filterMenu__container">
@@ -45,6 +45,15 @@ const FilterMenu = () => {
           </div>
         </div>
       </div>
+      <span
+        className="filterMenu__closeBtn material-icons"
+        onClick={closeBtn}
+        role="button"
+        onKeyPress={closeBtn}
+        tabIndex={0}
+      >
+        close
+      </span>
     </div>
   );
 };

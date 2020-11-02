@@ -1,3 +1,5 @@
+@import '../../index.sass'
+
 .Header
     position: relative
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
@@ -35,3 +37,13 @@
     span
         margin-left: 40px
     
+
+@media (max-width: $mid-breakpoint)
+    .Header
+        &__rightMenu
+            &__callNumber
+                display: none
+
+        &__leftMenu__items
+            display: none
+            

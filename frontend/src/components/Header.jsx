@@ -16,7 +16,7 @@ const Header = () => (
       </div>
       <div className="Header__rightMenu">
         <span className="material-icons">call</span>
-        <span>0800 700 1429</span>
+        <span className="Header__rightMenu__callNumber">0800 700 1429</span>
         <span className="material-icons">account_circle</span>
         <span className="material-icons">help</span>
       </div>
