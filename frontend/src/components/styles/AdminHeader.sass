@@ -2,18 +2,17 @@
 
 .Header
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
-  padding: 10px 0px 0px 0px
+  padding: 0.625rem 0px 0px 0px
   font-weight: 600
 
   &__container
     display: flex
     justify-content: space-between
     align-items: center
-    margin: auto
 
   &__logo
-    padding-bottom: 10px
-    margin: 23px 0px 0px 78px 
+    padding-bottom: 0.625rem
+    margin: 1.5rem 0px 0px 78px 
 
     img
       height: 48px
@@ -24,19 +23,22 @@
 
 
   &__title
-    margin-right: 21em
+    min-width: 50%
+    margin: 0px 1rem
+
         
   &__userItems
-    display: flex
-    align-items: center
-    margin-right: 115px
+    margin-right: 7.2rem
   
     a
+      display: flex
+      align-items: center
       margin-right: 1em
       text-decoration: none
       color: #707070
 
-    .material-icons
+    span
+      margin-left: 1.5rem
       font-size: 40px
       color: $secondary-color
 
