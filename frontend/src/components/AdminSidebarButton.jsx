@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/AdminSidebarButton.sass';
 
-const AdminSidebarButton = ({ action }) => {
+const AdminSidebarButton = ({ icon, action }) => {
   return (
     <div className="Sidebar__newFly">
       <button
@@ -12,7 +12,7 @@ const AdminSidebarButton = ({ action }) => {
         type="button"
       >
         <i>
-          <span className="material-icons">add_circle_outline</span>
+          <span className="material-icons">{icon}</span>
         </i>
         {action}
       </button>

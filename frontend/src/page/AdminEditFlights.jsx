@@ -4,6 +4,7 @@ import AdminSidebar from '../components/AdminSidebar';
 import AdminSidebarButton from '../components/AdminSidebarButton';
 import AdminForms from '../components/AdminForms';
 import AdminFooter from '../components/AdminFooter';
+import EditFlightsButton from '../components/AdminEditFlightsButton';
 import './styles/AdminEditFlights.sass';
 
 const AdminEditFlights = () => {
@@ -13,18 +14,14 @@ const AdminEditFlights = () => {
 
       <div className="MainView">
         <AdminSidebar>
-          <AdminSidebarButton action="Crear Vuelos" />
-          <AdminSidebarButton action="Editar Vuelos" />
+          <AdminSidebarButton icon="add_circle_outline" action="Crear Vuelos" />
+          <AdminSidebarButton icon="create" action="Editar Vuelos" />
         </AdminSidebar>
 
         <AdminForms>
           <div className="Forms--edit__button">
-            <button className="Button" type="button">
-              CREAR VUELO
-            </button>
-            <button className="Button" type="button">
-              CANCELAR
-            </button>
+            <EditFlightsButton action="CREAR VUELO" />
+            <EditFlightsButton action="CANCELAR" />
           </div>
           <a className="EliminarButton" href="/">
             Eliminar Vuelo
