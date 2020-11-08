@@ -11,18 +11,18 @@ const AdminForms = ({ children }) => {
         <div className="Forms__Item">
           <AdminSectionTitle title="Información de Aerolinea" />
           <div className="Item__Data">
-            <AdminInput title="AEROLINEA" placeHolder="..." />
-            <AdminInput title="NÚMERO DE VUELO" placeHolder="..." />
+            <AdminInput title="AEROLINEA" placeHolder="Nombre" />
+            <AdminInput title="NÚMERO DE VUELO" placeHolder="#" />
           </div>
         </div>
 
         <div className="Forms__Item">
           <AdminSectionTitle title="Trayecto de Vuelo" />
           <div className="Item__Data">
-            <AdminInput title="CIUDAD ORIGEN" placeHolder="..." />
-            <AdminInput title="CIUDAD DESTINO" placeHolder="..." />
-            <AdminInput title="PRECIO" placeHolder="..." />
-            <AdminInput title="DURACIÓN" placeHolder="..." />
+            <AdminInput title="CIUDAD ORIGEN" placeHolder="Ciudad..." />
+            <AdminInput title="CIUDAD DESTINO" placeHolder="Ciudad..." />
+            <AdminInput title="PRECIO" placeHolder="DLS" />
+            <AdminInput title="DURACIÓN" placeHolder="Time" />
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const AdminForms = ({ children }) => {
           </ul>
           <div className="Forms__TimeInput">
             <p>HORA</p>
-            <input placeholder="..." />
+            <input placeholder="Hh:Mm" />
           </div>
         </div>
         {children}

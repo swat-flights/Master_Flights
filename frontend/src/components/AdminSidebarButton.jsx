@@ -11,7 +11,9 @@ const AdminSidebarButton = ({ action }) => {
         className="Sidebar__newFly_button"
         type="button"
       >
-        <span className="material-icons">add_circle_outline</span>
+        <i>
+          <span className="material-icons">add_circle_outline</span>
+        </i>
         {action}
       </button>
     </div>

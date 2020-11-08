@@ -16,7 +16,9 @@ const AdminHeader = ({ headerTitle }) => {
         <div className="Header__userItems">
           <a className="Header__logout" href="/">
             <div>Cerrar Sesión</div>
-            <span className="material-icons">account_circle</span>
+            <i>
+              <span className="material-icons">account_circle</span>
+            </i>
           </a>
         </div>
       </div>

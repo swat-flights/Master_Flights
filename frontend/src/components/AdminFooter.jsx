@@ -7,10 +7,10 @@ const AdminFooter = () => {
       <div className="Footer__highlighter" />
       <div className="Footer__container">
         <div className="Footer__copyrights">
-          <h4>Sparrow S.A. Derechos reservados</h4>
+          <p>Sparrow S.A. Derechos reservados</p>
         </div>
         <div className="Footer__socialicons">
-          <span>Nuestras redes son:</span>
+          <p>Nuestras redes son:</p>
           <span className="material-icons">star_rate</span>
           <span className="material-icons">star_rate</span>
           <span className="material-icons">star_rate</span>
