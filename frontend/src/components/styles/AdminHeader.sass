@@ -1,0 +1,54 @@
+@import '../../index.sass'
+
+.Header
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
+  font-weight: 600
+
+  &__container
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0px 127px 0px 72px
+    margin-bottom: 0.5rem
+
+  &__logo
+    padding: 1rem 0px
+    
+
+    img
+      height: 48px
+  
+    p
+      text-align: center
+      margin: 0
+
+
+  &__title
+    min-width: 50%
+    margin: 0px 1rem
+
+        
+  &__userItems
+  
+    a
+      display: flex
+      align-items: center
+      margin-right: 1em
+      text-decoration: none
+      color: #707070
+      cursor: pointer
+
+      &:hover
+        text-decoration: underline
+
+    span
+      margin-left: 1rem
+      font-size: 40px
+      color: $secondary-color
+      
+
+
+  &__highlighter
+    width: 100%
+    height: 10px
+    background-color: $primary-color
