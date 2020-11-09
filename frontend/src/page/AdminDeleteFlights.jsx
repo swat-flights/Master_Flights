@@ -5,9 +5,9 @@ import AdminSidebarButton from '../components/AdminSidebarButton';
 import AdminFooter from '../components/AdminFooter';
 import AdminSearchFlight from '../components/AdminSearchFlight';
 import TravelCard from '../components/TravelCard';
-import './styles/AdminSearchDeleteFlights.sass';
+import './styles/AdminDeleteFlights.sass';
 
-const AdminSearchDeleteFligths = () => {
+const AdminDeleteFligths = () => {
   return (
     <>
       <AdminHeader headerTitle="Edición de Vuelos" />
@@ -36,4 +36,4 @@ const AdminSearchDeleteFligths = () => {
   );
 };
 
-export default AdminSearchDeleteFligths;
+export default AdminDeleteFligths;
