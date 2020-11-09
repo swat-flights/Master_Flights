@@ -13,8 +13,8 @@ const AdminAddFlights = () => {
 
       <div className="MainView">
         <AdminSidebar>
-          <AdminSidebarButton action="Crear Vuelos" />
-          <AdminSidebarButton action="Editar Vuelos" />
+          <AdminSidebarButton icon="add_circle_outline" action="Crear Vuelos" />
+          <AdminSidebarButton icon="create" action="Editar Vuelos" />
         </AdminSidebar>
 
         <AdminForms>
