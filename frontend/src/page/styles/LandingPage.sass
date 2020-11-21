@@ -1,47 +1,74 @@
+@import '../../index.sass'
+
 .background
     position: relative
-    z-index: -1
+    z-index: 1
 
     &__image
         height: 300px
         background-image: url("/src/assets/background.jpg")
         background-position: 50% 0
-        margin-bottom: 100px
+        /**  margin-bottom: 100px **/
 
     &__searchbox
         position: absolute
         width: 100%
         top: 150px
-    
-.Discounts
-    width: 1200px
-    margin: 8% auto
 
-    h2 
-        margin-left: 80px
+.Discounts
+    max-width: 1000px
+    margin: 120px auto
 
     &__container
-        display: flex
-        justify-content: center
-        margin: 40px 40px 0 
+        display: grid
+        grid-gap: 20px
+        grid-template-columns: repeat(4, 1fr)
+        justify-items: center
+        margin: 40px 0 0
 
 .process
-    margin: 8% auto
-    width: 1200px
+    margin: 120px auto
+    max-width: 1000px
     text-align: center
 
     &__steps
-        display: flex
-        margin: 60px 70px 0
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        margin: 60px 0px 0px
 
 .mobile
     display: flex
+    flex-wrap: wrap
     justify-content: center
     align-items: center
 
     &__feature
-        width: 30%
-        padding: 0 30px
+        width: 300px
+        margin: 0 30px
 
     &__picture
-        width: 30%
+        max-width: 400px
+        width: 70%
+
+@media (max-width: $mid-breakpoint)
+    .Discounts
+        margin: 250px 40px 120px
+        &__container
+            grid-gap: 32px
+            grid-template-columns: repeat(2, 1fr)
+
+    .process
+        margin: 120px 40px
+
+@media (max-width: $small-breakpoint)
+    .background
+        &__searchbox
+            top: 100px
+
+    .Discounts
+        margin: 380px 40px 120px
+        &__container
+            grid-template-columns: 1fr
+
+    .process__steps
+        grid-template-columns: 1fr

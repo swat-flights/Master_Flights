@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/FlightSearchBox.sass';
 
-const FlightSearchBox = () => (
+const FlightSearchBox = ({ noShadow }) => (
   <div className="SearchBox">
-    <div className="SearchBox__container">
+    <div className={`SearchBox__container ${noShadow ? 'withoutShadow' : ''}`}>
       <h3>Asi volamos en Sparrow, volar es enamorarse</h3>
       <h5>Busca aca el vuelo que mas te convenga</h5>
       <div>
