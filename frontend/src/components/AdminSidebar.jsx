@@ -2,7 +2,7 @@ import React from 'react';
 import './styles/AdminSidebar.sass';
 
 const AdminSidebar = ({ children }) => {
-  return <div className="Sidebar">{children}</div>;
+  return <nav className="Sidebar">{children}</nav>;
 };
 
 export default AdminSidebar;

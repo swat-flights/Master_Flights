@@ -1,22 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/AdminSidebarButton.sass';
 
-const AdminSidebarButton = ({ icon, action }) => {
+const AdminSidebarButton = ({ icon, action, route }) => {
+  // let color;
+  // const changeColor = () => {
+  //   if (route !== window.location.pathname){
+  //     color = "none"
+  //   }
+  //   return true
+  // }
+
+  // const [color, changeColor] = useState("transparent")
+
   return (
-    <div className="Sidebar__newFly">
-      <button
-        onClick={() => {
-          window.alert('lorem ipsum');
-        }}
-        className="Sidebar__newFly_button"
-        type="button"
-      >
-        <i>
-          <span className="material-icons">{icon}</span>
-        </i>
-        {action}
-      </button>
-    </div>
+    <button type="button" className="Sidebar__button">
+      <Link to={route}>
+        <i className="material-icons">{icon}</i>
+        <p>{action}</p>
+      </Link>
+    </button>
   );
 };
 

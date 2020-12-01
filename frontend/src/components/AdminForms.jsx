@@ -1,14 +1,14 @@
 import React from 'react';
 import AdminInput from './AdminInput';
-import AdminScheduleButton from './AdminScheduleButton';
+// import AdminScheduleButton from './AdminScheduleButton';
 import AdminSectionTitle from './AdminSectionTitle';
 import './styles/AdminForms.sass';
 
 const AdminForms = ({ children }) => {
   return (
-    <div className="Forms">
-      <div className="Forms__Container">
-        <div className="Forms__Item">
+    <div className="AdminForms">
+      <div className="AdminForms__Container">
+        <div className="AdminForms__Item">
           <AdminSectionTitle title="Información de Aerolinea" />
           <div className="Item__Data">
             <AdminInput title="AEROLINEA" placeHolder="Nombre" />
@@ -16,7 +16,7 @@ const AdminForms = ({ children }) => {
           </div>
         </div>
 
-        <div className="Forms__Item">
+        <div className="AdminForms__Item">
           <AdminSectionTitle title="Trayecto de Vuelo" />
           <div className="Item__Data">
             <AdminInput title="CIUDAD ORIGEN" placeHolder="Ciudad..." />
@@ -26,7 +26,7 @@ const AdminForms = ({ children }) => {
           </div>
         </div>
 
-        <div className="Forms__Item">
+        {/* <div className="AdminForms__Item">
           <AdminSectionTitle title="Horario de Vuelo" />
           <p> Días </p>
           <ul>
@@ -38,11 +38,11 @@ const AdminForms = ({ children }) => {
             <AdminScheduleButton day="Sábado" />
             <AdminScheduleButton day="Domingo" />
           </ul>
-          <div className="Forms__TimeInput">
+          <div className="AdminForms__TimeInput">
             <p>HORA</p>
             <input placeholder="Hh:Mm" />
           </div>
-        </div>
+        </div> */}
         {children}
       </div>
     </div>
