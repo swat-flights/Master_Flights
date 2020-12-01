@@ -1,59 +1,105 @@
 @import '../../index.sass'
 
 .AdminHeader
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: center
+  padding-top: 10px
+  color: $primary-font-color
+  font-weight: 500
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
-  font-weight: 600
 
-  &__container
-    display: flex
-    justify-content: space-between
-    align-items: center
-    padding: 0px 127px 0px 72px
-    margin-bottom: 0.5rem
-
-  &__logo
-    padding: 1rem 0px
-    
-
-    img
-      height: 48px
+  a
+    color: $primary-font-color
+    text-decoration: none
   
-    p
-      text-align: center
-      margin: 0
+  &__logo
+    max-width: 40%
+    text-align: center
 
+    picture
+      display: inline-block
+
+      img
+        width: 100%
+
+    p
+      font-size: 12px
 
   &__title
-    min-width: 50%
-    margin: 0px 1rem
+    font-size: 1.5rem
+    margin-top: 10px
 
-    h1
-      margin: 0px
+  &__logout
 
-        
-  &__userItems
-  
     a
       display: flex
+      flex-direction: column
       align-items: center
-      margin-right: 1em
-      text-decoration: none
-      color: #707070
-      cursor: pointer
-
-      &:hover
-        text-decoration: underline
-
-    span
-      margin-left: 1rem
-      font-size: 40px
-      color: $secondary-color
       
+      li
+        list-style: none
+        font-size: 12px
 
+        .material-icons
+          color: $secondary-color
 
-  &__highlighter
+    a:hover
+      text-decoration: underline
+
+  hr
     width: 100%
-    height: 10px
+    height: 6px
+    border: 0
     background-color: $primary-color
-    margin: 0px
-    border: 0px
+
+@media (min-width: $small-breakpoint)
+  .AdminHeader
+    font-weight: 600
+
+    &__logout
+      a
+        li
+          font-size: 18px
+
+          .material-icons
+            font-size: 32px
+
+    &__logo
+      a
+        p
+          font-size: 18px
+
+
+@media (min-width: 640px)
+  .AdminHeader 
+    &__logo
+      max-width: 30%
+      order: 1
+
+    &__title
+      order: 2
+    
+    &__logout
+      order: 3
+    
+    hr
+      order: 4
+
+@media (min-width: $mid-breakpoint)
+  .AdminHeader
+    justify-content: space-between
+
+    &__logo
+      max-width: 180px
+      padding: 10px 5px 
+      margin-left: 60px 
+    
+    &__logout
+      margin-right: 90px
+
+    &__title
+      font-size: 34px
+      position: relative
+      right: 8%
