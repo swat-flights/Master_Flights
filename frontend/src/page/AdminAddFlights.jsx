@@ -25,17 +25,7 @@ const AdminAddFlights = () => {
           />
         </AdminSidebar>
 
-        <AdminForms>
-          <button
-            onClick={() => {
-              window.alert('lorem ipsum');
-            }}
-            className="Button__Create"
-            type="button"
-          >
-            CREAR VUELO
-          </button>
-        </AdminForms>
+        <AdminForms />
       </div>
 
       {/* <AdminFooter /> */}

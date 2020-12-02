@@ -4,13 +4,7 @@ import './styles/AdminEditFlightsButton.sass';
 const EditFlightsButton = ({ action }) => {
   return (
     <>
-      <button
-        className="Button"
-        type="button"
-        onClick={() => {
-          window.alert('lorem ipsum');
-        }}
-      >
+      <button className="admin-submit-button" type="submit">
         {action}
       </button>
     </>
