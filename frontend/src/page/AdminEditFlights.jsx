@@ -28,8 +28,8 @@ const AdminEditFlights = () => {
 
         <AdminForms>
           <div className="Forms--edit__button">
-            <SubmitButton action="CREAR VUELO" />
-            <SubmitButton action="CANCELAR" />
+            <SubmitButton action="CREAR VUELO" type="submit" />
+            <SubmitButton action="CANCELAR" type="reset" />
           </div>
           <a className="EliminarButton" href="/">
             Eliminar Vuelo

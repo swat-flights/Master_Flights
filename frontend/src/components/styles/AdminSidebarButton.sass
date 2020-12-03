@@ -1,13 +1,13 @@
 @import '../../index.sass'
 
 .Sidebar__button
-  width: 49.8%
-  max-width: 238px
+  width: 50%
+  max-width: 260px
   height: 9vh
+  max-height: 90px
   background-color: $primary-color
   border-style: none
   outline: none
-
   a
     display: flex
     justify-content: center
@@ -28,19 +28,13 @@
 
 @media (min-width: $mid-breakpoint)
   .Sidebar__button
-    max-height: 280px
     width: 100%
     margin-top: 20px
     margin-right: 0
     border-radius: 40px
-
-@media (min-width: 1280px)
-  .Sidebar__button
-    max-width: none
-
     a
-      flex-wrap: wrap   
+      flex-wrap: wrap  
       font-size: 20px
       .material-icons
-        margin-right: 10px
         font-size: 28px
+        margin-right: 10px 

@@ -10,7 +10,7 @@ const App = () => (
   <BrowserRouter>
     <Route exact path="/" component={LandingPage} />
     <Route exact path="/createFlights" component={CreateFlights} />
-    <Route exact path="/editFlights" component={EditFlights} />
+    <Route exact path="/editFlights/:id" component={EditFlights} />
     <Route exact path="/deleteFlights" component={DeleteFlights} />
     <Route exact path="/flightResults" component={FlightResults} />
   </BrowserRouter>
