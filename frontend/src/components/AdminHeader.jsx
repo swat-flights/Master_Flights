@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import './styles/AdminHeader.sass';
 
@@ -7,22 +8,22 @@ const AdminHeader = ({ headerTitle }) => {
     <>
       <header className="AdminHeader">
         <figure className="AdminHeader__logo">
-          <a href="/">
+          <Link to="/deleteFlights">
             <picture>
               <img src={Logo} alt="" />
             </picture>
             <p>ADMINISTRADOR</p>
-          </a>
+          </Link>
         </figure>
+        <h1 className="AdminHeader__title">{headerTitle}</h1>
         <ul className="AdminHeader__logout">
-          <a href="/">
+          <Link to="/">
             <li>
               <i className="material-icons">account_circle</i>
             </li>
             <li>Cerrar Sesión</li>
-          </a>
+          </Link>
         </ul>
-        <h1 className="AdminHeader__title">{headerTitle}</h1>
         <hr />
       </header>
     </>

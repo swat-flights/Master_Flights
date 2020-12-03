@@ -1,11 +1,12 @@
 @import '../../index.sass'
-
+  
 .AdminHeader
+  max-height: 15vh
   display: flex
   flex-wrap: wrap
   justify-content: space-around
   align-items: center
-  padding-top: 10px
+  padding-top: 5px
   color: $primary-font-color
   font-weight: 500
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
@@ -15,33 +16,19 @@
     text-decoration: none
   
   &__logo
-    max-width: 40%
-    text-align: center
-
-    picture
-      display: inline-block
-
-      img
-        width: 100%
-
-    p
-      font-size: 12px
+    display: none
 
   &__title
-    font-size: 1.5rem
-    margin-top: 10px
+    font-size: 20px
 
   &__logout
-
     a
       display: flex
       flex-direction: column
       align-items: center
-      
       li
         list-style: none
         font-size: 12px
-
         .material-icons
           color: $secondary-color
 
@@ -61,44 +48,38 @@
     &__logout
       a
         li
-          font-size: 18px
-
           .material-icons
             font-size: 32px
-
+      
     &__logo
+      display: inline-block
+      width: 20%
+      max-width: 180px
       a
         p
-          font-size: 18px
-
-
-@media (min-width: 640px)
-  .AdminHeader 
-    &__logo
-      max-width: 30%
-      order: 1
-
-    &__title
-      order: 2
-    
-    &__logout
-      order: 3
-    
-    hr
-      order: 4
+          display: none
+        picture
+          display: inline-block
+          img
+            width: 100%
 
 @media (min-width: $mid-breakpoint)
   .AdminHeader
     justify-content: space-between
 
     &__logo
-      max-width: 180px
       padding: 10px 5px 
       margin-left: 60px 
+      a
+        p
+          display: inline-block
     
     &__logout
-      margin-right: 90px
-
+      margin-right: 80px
+      a
+        li
+          font-size: 1rem
+        
     &__title
       font-size: 34px
       position: relative

@@ -2,26 +2,22 @@
 
 .Sidebar__button
   width: 49.8%
-  max-width: 240px
-  height: 100%
+  max-width: 238px
+  height: 9vh
   background-color: $primary-color
-  // color: $light-background
   border-style: none
   outline: none
 
   a
-    height: 100%
     display: flex
     justify-content: center
     align-items: center
     font-size: 14px
     text-decoration: none
     color: $light-background
-
     .material-icons
       margin-right: 5px
       font-size: 18px
-    
     p
       &:hover
         text-decoration: underline
@@ -30,13 +26,8 @@
     background-color: $dark-primary-color
     cursor: pointer
 
-@media (min-width: $small-breakpoint)
-  .Sidebar__button
-    margin-right: 2px
-
 @media (min-width: $mid-breakpoint)
   .Sidebar__button
-    height: 9vh
     max-height: 280px
     width: 100%
     margin-top: 20px

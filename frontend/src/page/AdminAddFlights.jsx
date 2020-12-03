@@ -3,7 +3,9 @@ import AdminHeader from '../components/AdminHeader';
 import AdminSidebarButton from '../components/AdminSidebarButton';
 import AdminSidebar from '../components/AdminSidebar';
 import AdminForms from '../components/AdminForms';
-// import AdminFooter from '../components/AdminFooter';
+import SubmitButton from '../components/AdminSubmitButton';
+import AdminFooter from '../components/AdminFooter';
+
 import './styles/AdminAddFlights.sass';
 
 const AdminAddFlights = () => {
@@ -21,14 +23,16 @@ const AdminAddFlights = () => {
           <AdminSidebarButton
             icon="create"
             action="Editar Vuelos"
-            route="/editFlights"
+            route="/deleteFlights"
           />
         </AdminSidebar>
 
-        <AdminForms />
+        <AdminForms>
+          <SubmitButton action="CREAR VUELO" type="submit" />
+        </AdminForms>
       </div>
 
-      {/* <AdminFooter /> */}
+      <AdminFooter />
     </>
   );
 };

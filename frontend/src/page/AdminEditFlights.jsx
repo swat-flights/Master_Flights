@@ -4,7 +4,7 @@ import AdminSidebar from '../components/AdminSidebar';
 import AdminSidebarButton from '../components/AdminSidebarButton';
 import AdminForms from '../components/AdminForms';
 import AdminFooter from '../components/AdminFooter';
-import EditFlightsButton from '../components/AdminEditFlightsButton';
+import SubmitButton from '../components/AdminSubmitButton';
 import './styles/AdminEditFlights.sass';
 
 const AdminEditFlights = () => {
@@ -28,8 +28,8 @@ const AdminEditFlights = () => {
 
         <AdminForms>
           <div className="Forms--edit__button">
-            <EditFlightsButton action="CREAR VUELO" />
-            <EditFlightsButton action="CANCELAR" />
+            <SubmitButton action="CREAR VUELO" />
+            <SubmitButton action="CANCELAR" />
           </div>
           <a className="EliminarButton" href="/">
             Eliminar Vuelo

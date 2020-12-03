@@ -2,10 +2,9 @@ import React from 'react';
 import AdminInput from './AdminInput';
 import AdminScheduleButton from './AdminScheduleButton';
 import AdminSectionTitle from './AdminSectionTitle';
-import AdminSubmitInput from './AdminEditFlightsButton';
 import './styles/AdminForms.sass';
 
-const AdminForms = () => {
+const AdminForms = ({ children }) => {
   return (
     <form action="" className="AdminForms">
       <div className="AdminForms__Item">
@@ -14,15 +13,9 @@ const AdminForms = () => {
           title="AEROLINEA"
           type="text"
           id="airline"
-          name="arelinea-info"
           placeHolder="Nombre"
         />
-        <AdminInput
-          title="NÚMERO DE VUELO"
-          id="flightNumber"
-          name="arelinea-info"
-          placeHolder="#"
-        />
+        <AdminInput title="NÚMERO DE VUELO" id="flightNumber" placeHolder="#" />
       </div>
 
       <div className="AdminForms__Item">
@@ -30,27 +23,23 @@ const AdminForms = () => {
         <AdminInput
           title="CIUDAD ORIGEN"
           id="cityStart"
-          name="trayecto-info"
           placeHolder="Ciudad..."
         />
         <AdminInput
           title="CIUDAD DESTINO"
           id="cityEnd"
-          name="trayecto-info"
           placeHolder="Ciudad..."
         />
         <AdminInput
           title="PRECIO"
           type="number"
           id="flightPrice"
-          name="trayecto-info"
           placeHolder="$ DLS"
         />
         <AdminInput
           title="DURACIÓN"
           type="time"
           id="flightDuration"
-          name="trayecto-info"
           value="12:00"
         />
       </div>
@@ -117,16 +106,10 @@ const AdminForms = () => {
           </li>
         </ul>
         <div className="AdminForms__TimeInput">
-          <AdminInput
-            title="HORA"
-            type="time"
-            id="departure"
-            name="hora"
-            value="12:00"
-          />
+          <AdminInput title="HORA" type="time" id="departure" value="12:00" />
         </div>
       </div>
-      <AdminSubmitInput action="CREAR VUELO" />
+      {children}
     </form>
   );
 };

@@ -1,16 +1,16 @@
 import React from 'react';
 import './styles/AdminInput.sass';
 
-const AdminInput = ({ title, type, id, name, value, placeHolder }) => {
+const AdminInput = ({ title, type, id, placeHolder }) => {
   return (
     <label htmlFor={id} className="Labels">
       <span>{title}</span>
       <input
         type={type || 'text'}
         id={id}
-        name={name}
-        defaultValue={value}
+        name={id}
         placeholder={placeHolder}
+        required
       />
     </label>
   );
