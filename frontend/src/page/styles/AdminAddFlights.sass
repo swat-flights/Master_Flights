@@ -2,6 +2,8 @@
 
 .MainView
   display: flex
+  flex-wrap: wrap
+  min-height: 85vh
 
   .Button__Create
     min-width: 100%
@@ -18,4 +20,8 @@
 
     &:hover
       text-decoration: underline
+
+@media (min-width: $mid-breakpoint)
+  .MainView
+    flex-wrap: nowrap
 

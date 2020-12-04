@@ -1,34 +1,41 @@
 @import '../../index.sass'
-  
 
-.Sidebar__newFly
-  display: flex
-  align-items: center
-  justify-content: center
-  height: 92px
-  width: 303px
-  margin: 2rem 1rem 0px 1rem
-    
-  .material-icons
-    font-size: 30px
-    color: $light-background
-
-
-  &_button
-    width: 100%
-    height: inherit
+.Sidebar__button
+  width: 50%
+  max-width: 260px
+  height: 9vh
+  max-height: 90px
+  background-color: $primary-color
+  border-style: none
+  outline: none
+  a 
+    height: 100%
     display: flex
-    justify-content: space-around
+    justify-content: center
     align-items: center
-    padding: 0px 4rem
-    font-size: 1.25rem
-    border-radius: 40px
-    color: white
-    outline: none
+    font-size: 14px
+    text-decoration: none
+    color: $light-background
+    .material-icons
+      margin-right: 5px
+      font-size: 18px
+    p
+      &:hover
+        text-decoration: underline
+
+  &:hover
+    background-color: $dark-primary-color
     cursor: pointer
-    border-style: none
-    background: none
-    
-    &:hover
-      background-color: $primary-color
-      text-decoration: underline
+
+@media (min-width: $mid-breakpoint)
+  .Sidebar__button
+    width: 100%
+    margin-top: 20px
+    margin-right: 0
+    border-radius: 40px
+    a
+      flex-wrap: wrap  
+      font-size: 20px
+      .material-icons
+        font-size: 28px
+        margin-right: 10px 

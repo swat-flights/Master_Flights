@@ -1,16 +1,23 @@
 @import '../../index.sass'
 
 .Labels
-  width: 385px
-  height: 75px
-  margin-bottom: 30px
+  // width: 385px
+  // height: 75px
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 10px
+  align-items: center
 
-  p
-    margin: 0px 0px 5px 10px
+  span
+    width: 100%
+    margin-bottom: 5px
+    font-weight: 500
     font-size: 14px
 
   input
-    width: 90%
+    width: 100%
+    max-width: 340px
+    margin-bottom: 5px
     padding: 14px 24px
     border: 1px
     border-color: $primary-font-color
@@ -18,7 +25,19 @@
     border-style: solid
     outline: none
     font-size: 16px
+    background-color: transparent
 
     &::placeholder
       color: #41485E
 
+@media (min-width: $small-breakpoint)
+  .Labels
+    width: 48%
+    max-width: 340px
+
+@media (min-width: $mid-breakpoint)
+  .Labels
+    max-width: 360px
+
+    input
+      max-width: 360px
