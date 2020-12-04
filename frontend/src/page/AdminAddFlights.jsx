@@ -13,7 +13,7 @@ const AdminAddFlights = () => {
     <>
       <AdminHeader headerTitle="Creación de Vuelos" />
 
-      <div className="MainView">
+      <main className="MainView">
         <AdminSidebar>
           <AdminSidebarButton
             icon="add_circle_outline"
@@ -23,14 +23,14 @@ const AdminAddFlights = () => {
           <AdminSidebarButton
             icon="create"
             action="Editar Vuelos"
-            route="/deleteFlights"
+            route="/editFlights"
           />
         </AdminSidebar>
 
         <AdminForms>
           <SubmitButton action="CREAR VUELO" type="submit" />
         </AdminForms>
-      </div>
+      </main>
 
       <AdminFooter />
     </>

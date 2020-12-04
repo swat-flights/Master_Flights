@@ -4,29 +4,35 @@ import AdminSidebar from '../components/AdminSidebar';
 import AdminSidebarButton from '../components/AdminSidebarButton';
 import AdminFooter from '../components/AdminFooter';
 import AdminSearchFlight from '../components/AdminSearchFlight';
-import TravelCard from '../components/TravelCard';
-import './styles/AdminDeleteFlights.sass';
+// import TravelCard from '../components/TravelCard';
+import './styles/AdminSearchFlights.sass';
 
-const AdminDeleteFligths = () => {
+const AdminSearchFligths = () => {
   return (
     <>
       <AdminHeader headerTitle="Edición de Vuelos" />
 
       <main className="MainView">
         <AdminSidebar>
-          <AdminSidebarButton icon="add_circle_outline" action="Crear Vuelos" />
-          <AdminSidebarButton icon="create" action="Editar Vuelos" />
+          <AdminSidebarButton
+            icon="add_circle_outline"
+            action="Crear Vuelos"
+            route="/createFlights"
+          />
+          <AdminSidebarButton
+            icon="create"
+            action="Editar Vuelos"
+            route="/editFlights"
+          />
         </AdminSidebar>
 
         <section className="searchSection">
           <AdminSearchFlight />
-          <div className="searchSection__title">
-            <h1>Recientes:</h1>
-          </div>
-          <div>
+          <div className="recents">
+            <h1 className="recents__title">Recientes:</h1>
+            {/* <TravelCard />
             <TravelCard />
-            <TravelCard />
-            <TravelCard />
+            <TravelCard /> */}
           </div>
         </section>
       </main>
@@ -36,4 +42,4 @@ const AdminDeleteFligths = () => {
   );
 };
 
-export default AdminDeleteFligths;
+export default AdminSearchFligths;

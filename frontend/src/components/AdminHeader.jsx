@@ -8,7 +8,7 @@ const AdminHeader = ({ headerTitle }) => {
     <>
       <header className="AdminHeader">
         <figure className="AdminHeader__logo">
-          <Link to="/deleteFlights">
+          <Link to="/editFlights">
             <picture>
               <img src={Logo} alt="" />
             </picture>
