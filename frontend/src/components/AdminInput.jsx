@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/AdminInput.sass';
 
-const AdminInput = ({ title, type, id, placeHolder }) => {
+const AdminInput = ({ title, type, id, placeHolder, defaultValue }) => {
   return (
     <label htmlFor={id} className="Labels">
       <span>{title}</span>
@@ -10,6 +10,7 @@ const AdminInput = ({ title, type, id, placeHolder }) => {
         id={id}
         name={id}
         placeholder={placeHolder}
+        defaultValue={defaultValue}
         required
       />
     </label>

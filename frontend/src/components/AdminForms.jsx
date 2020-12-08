@@ -4,47 +4,58 @@ import AdminScheduleButton from './AdminScheduleButton';
 import AdminSectionTitle from './AdminSectionTitle';
 import './styles/AdminForms.sass';
 
-const AdminForms = ({ children }) => {
+const AdminForms = props => {
+  const { children, name, id } = props;
+
   return (
     <form action="" className="AdminForms">
-      <div className="AdminForms__Item">
+      <section className="AdminForms__Item">
         <AdminSectionTitle title="Información de Aerolinea" />
         <AdminInput
           title="AEROLINEA"
           type="text"
           id="airline"
           placeHolder="Nombre"
+          defaultValue={name}
         />
-        <AdminInput title="NÚMERO DE VUELO" id="flightNumber" placeHolder="#" />
-      </div>
+        <AdminInput
+          title="NÚMERO DE VUELO"
+          id="flightNumber"
+          placeHolder="#"
+          defaultValue={name}
+        />
+      </section>
 
-      <div className="AdminForms__Item">
+      <section className="AdminForms__Item">
         <AdminSectionTitle title="Trayecto de Vuelo" />
         <AdminInput
           title="CIUDAD ORIGEN"
           id="cityStart"
           placeHolder="Ciudad..."
+          defaultValue={name}
         />
         <AdminInput
           title="CIUDAD DESTINO"
           id="cityEnd"
           placeHolder="Ciudad..."
+          defaultValue={name}
         />
         <AdminInput
           title="PRECIO"
           type="number"
           id="flightPrice"
           placeHolder="$ DLS"
+          defaultValue={id}
         />
         <AdminInput
           title="DURACIÓN"
           type="time"
           id="flightDuration"
-          value="12:00"
+          defaultValue="12:00"
         />
-      </div>
+      </section>
 
-      <div className="AdminForms__Item">
+      <section className="AdminForms__Item">
         <AdminSectionTitle title="Horario de Vuelo" />
         <p> Días </p>
         <ul className="days__container">
@@ -106,9 +117,14 @@ const AdminForms = ({ children }) => {
           </li>
         </ul>
         <div className="AdminForms__TimeInput">
-          <AdminInput title="HORA" type="time" id="departure" value="12:00" />
+          <AdminInput
+            title="HORA"
+            type="time"
+            id="departure"
+            defaultValue="12:00"
+          />
         </div>
-      </div>
+      </section>
       {children}
     </form>
   );
