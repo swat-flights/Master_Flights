@@ -6,6 +6,7 @@ import './styles/AdminForms.sass';
 
 const AdminForms = props => {
   const { children, name, id } = props;
+
   return (
     <form action="" className="AdminForms">
       <section className="AdminForms__Item">

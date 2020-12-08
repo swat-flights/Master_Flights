@@ -24,7 +24,7 @@ const AdminEditFlights = () => {
   }
 
   window.onload = () => getData();
-  // console.log(flightData)
+  console.log(flightData);
   return (
     <>
       <AdminHeader headerTitle="Edición de Vuelos" />
@@ -45,7 +45,7 @@ const AdminEditFlights = () => {
 
         <AdminForms {...flightData}>
           <div className="Forms--edit__button">
-            <SubmitButton action="CREAR VUELO" type="submit" />
+            <SubmitButton action="EDITAR VUELO" type="submit" />
             <SubmitButton action="CANCELAR" type="reset" />
           </div>
           <a className="EliminarButton" href="/">
