@@ -22,7 +22,7 @@ const AdminEditFlights = () => {
           <AdminSidebarButton
             icon="create"
             action="Editar Vuelos"
-            route="editFlights"
+            route="/editFlights"
           />
         </AdminSidebar>
 
