@@ -5,7 +5,7 @@ import CreateFlights from '../page/AdminAddFlights';
 import EditFlights from '../page/AdminEditFlights';
 import SearchFlights from '../page/AdminSearchFlights';
 import FlightResults from '../page/FlightResults';
-import Checkout from '../components/PassengerDetailsForm';
+import Checkout from '../components/PriceCard';
 
 const App = () => (
   <BrowserRouter>

@@ -1,7 +1,7 @@
 import React from 'react';
 import AdminInput from './AdminInput';
 
-import "./styles/PassengerDetailsForm.sass";
+import './styles/PassengerDetailsForm.sass';
 
 const PassengerDetailsForm = () => {
   return (
