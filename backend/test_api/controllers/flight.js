@@ -2,54 +2,124 @@
 const Flight = require('../models/flight');
 
 // GET all flights
-const getAllFlights = (origin, destination, departure, arrival) => {
+const getAllFlights = () => {
   return new Promise((resolve, reject) => {
-    if(!origin || !destination) {
-      return reject()
-    }
+    return Flight.find({}, (error, data) => {
+      return error ? 
+      reject(error)
+      :resolve(data)
+    })
+  })
+}
+
+//filter by query params
+const filterFlights = (origin, destination, departure, arrival) => {
+  return new Promise((resolve, reject) => {
+    // return Flight.find(queryParams, (error, data) => {
+    //   error ? 
+    //   reject(error)
+    //   :resolve(data)
+    // })
+
+    // query momentaneo, esperando modificaciones en DB
     return Flight.find({
       origin: origin,
       destination: destination, 
       departure: { $gte: departure },
       arrival: { $lte: arrival }
     }, (error, data) => {
-      error ? 
+      return error ? 
       reject(error)
       :resolve(data)
     })
   })
 };
 
+const getOneFlight = (id) => {
+  return new Promise((resolve, reject) => {
+    return Flight.find({_id: id}, (error, data) => {
+      return error ? 
+      reject('[Controller Error]: ' + error)
+      // flight document exist?
+      :!data?
+      reject('Non-existent Document ' + error)
+      :resolve(data)
+    })
+  })
+}
+
 // POST flight
-const newFlight = (req, res) => {
-  // check if the flight already exists in db
-  Flight.findOne({departure:req.body.departure}, (data) => {
-
-      //if flight not in db, add it
-      if ( data === null ) {
-        // create a new flight object using the Flight model and req.body
-        const newFlight = new Flight({
-          departure: req.body.departure,
-          departure_time: req.body.departure_time,
-          arrival: req.body.arrival,
-          arrival_time: req.body.arrival_time,
-          flight_duration: req.body.flight_duration,
-          flight_url: req.body.flight_url,
-        })
-
-        // save this object to database
-        newFlight.save((err, data)=>{
-          if (err) return res.json({Error: err});
-          return res.json(data);
-        })
-      // if flight is in db, return a message to inform it exists
-      } else {
-        return res.json({message:"Flight already exists"});
+const newFlight = (flightData) => {
+  return new Promise((resolve, reject) => {
+    if(!flightData._id) {
+      return reject('[Controller Error:] Missing a valid ID')
+    }
+    // check if the flight already exists in db
+    Flight.findOne({_id:flightData._id}, (error, data) => {
+      if (data) {
+        return reject('This file currently exists. Edition is possible')
       }
+      //if not, let's create it
+      const newFlight = new Flight({
+        _id: flightData._id,
+        price: `MX$${flightData.price}`,
+        operator: flightData.operator,
+        departure: flightData.departure,
+        arrival: flightData.arrival,
+        duration: flightData.duration,
+        origin: flightData.origin,
+        destination: flightData.destination,
+        // departure_time: flightData.departure_time,
+        // arrival_time: flightData.arrival_time,
+        stopovers: [],
+        prices: []
+        // flight_url: flightData.flight_url,
+      })
+      newFlight.save((error, data) => {
+        return error?
+        reject('[Error on controller]: ' + error)
+        :resolve(data)
+      })
+    })
   })
 };
 
+const updateFlight = (id, newData) => {
+  return new Promise((resolve, reject) => {
+    if(newData._id) {
+      return reject('Is not possible to update an existent id')
+    }
+    Flight.findOneAndUpdate({_id: id}, newData, {new: true} ,(error, updatedFlight) => {
+      return error?
+        reject('[Error on controller]: ' + error)
+        :!updatedFlight?
+        reject('Non-existent Document ' + error)
+        :resolve(updatedFlight)
+    })
+  })
+}
+
+const removeFlight = (id) => {
+  return new Promise((resolve, reject) => {
+    if(!id) {
+      return reject('Bad Request')
+    }
+    Flight.findOneAndDelete({_id: id}, (error, flight) => {
+      if(!flight){
+        console.error('Non-existent Document ' + error)
+      }
+      return error?
+        reject('[Error on controller]: ' + error)
+        :resolve(flight)
+    })
+  })
+}
+
 module.exports = {
+  getAllFlights,
+  filterFlights,
+  getOneFlight,
   newFlight,
-  getAllFlights
+  updateFlight,
+  removeFlight,
 };

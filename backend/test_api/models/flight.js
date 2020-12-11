@@ -2,17 +2,24 @@ const mongoose = require("mongoose");
 
 const FlightSchema = new mongoose.Schema(
   {
+    _id: {type:String, required:true},
+    price: {type: String, required: true},
+    operator: {type:String, required:true},
     departure: {type:String, required:true},
     departure_time: String,
     arrival: {type:String, required:true},
     arrival_time: String,
-    flight_duration: Number,
-    flight_url: String,
+    duration: {type:String, required:true},
+    origin: {type:String, required:true},
+    destination: {type:String, required:true},
+    stops: String,
+    // flight_duration: Number,
+    // flight_url: String,
     stopovers: [
       {
-      stopover_departure: {type:String, required:true},
+      stopover_departure: {type:String},
       stopover_departure_time: String,
-      stopover_arrival: {type:String, required:true},
+      stopover_arrival: {type:String },
       stopover_arrival_time: String,
       stopover_flight_duration: Number,
       stopover_flight_number: String,
@@ -23,7 +30,7 @@ const FlightSchema = new mongoose.Schema(
     ],
     prices: [
       {
-      category: {type:String, required:true},
+      category: {type:String},
       currency: String,
       price: Number
       }
