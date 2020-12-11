@@ -2,12 +2,21 @@
 const Flight = require('../models/flight');
 
 // GET all flights
-const getAllFlights = (req, res) => {
-  Flight.find({}, (err, data)=>{
-    if (err){
-      return res.json({Error: err});
+const getAllFlights = (origin, destination, departure, arrival) => {
+  return new Promise((resolve, reject) => {
+    if(!origin || !destination) {
+      return reject()
     }
-    return res.json(data);
+    return Flight.find({
+      origin: origin,
+      destination: destination, 
+      departure: { $gte: departure },
+      arrival: { $lte: arrival }
+    }, (error, data) => {
+      error ? 
+      reject(error)
+      :resolve(data)
+    })
   })
 };
 

@@ -31,7 +31,7 @@ const FlightSchema = new mongoose.Schema(
   }
 );
 
-const Flight = mongoose.model('Flight', FlightSchema); // convert to model named Flight
+const Flight = mongoose.model('flights_v2', FlightSchema); // convert to model named Flight
 
 module.exports = Flight; // export for controller use
 
