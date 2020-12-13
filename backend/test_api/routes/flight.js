@@ -11,23 +11,22 @@ router.patch('/flight/:id', update)
 router.delete('/flight/:id', remove)
 
 //routes handlers
-async function list(req, res) {
-  const origin = req.query.origin
-  const destination = req.query.destination
-  const departure = req.query.departure
-  const arrival = req.query.arrival
 
+// list flights
+async function list(req, res) {
   //if not query params, get all documents
-  !origin && !destination && !departure && !arrival?
+  !req.query?
   await flightController.getAllFlights()
     .then((flights) => response.success(req, res, flights, 200))
     .catch((error) => response.error(req, res, 'Internal Error', 500, error))
-    // await flightController.filterFlights(req.query)
-  :await flightController.filterFlights(origin, destination, departure, arrival)
+  
+  // if yes, filter them.
+  :await flightController.filterFlights(req.query)
     .then((flights) => response.success(req, res, flights, 200))
     .catch((error) => response.error(req, res, 'Internal Error', 500, error))
 };
 
+// get one flight
 async function getOne(req, res) {
   const flightId = req.params.id
   await flightController.getOneFlight(flightId)
@@ -35,6 +34,7 @@ async function getOne(req, res) {
     .catch((error) => response.error(req, res, 'Internal Error', 500, error))
 }
 
+// create one
 async function create(req, res) {
   const data = req.body
   await flightController.newFlight(data)
@@ -42,6 +42,7 @@ async function create(req, res) {
     .catch((error) => response.error(req, res, 'Error on flight creation', 500, error))
 }
 
+// update by id
 async function update(req, res) {
   const id = req.params.id
   const newData = req.body
@@ -50,10 +51,12 @@ async function update(req, res) {
     .catch((error) => response.error(req, res, 'Error updating', 500, error))
 }
 
+// delete by id
 async function remove(req, res) {
   const id = req.params.id
   await flightController.removeFlight(id)
     .then((flighDeleted) => response.success(req, res, `Flight with id [${flighDeleted._id}]: correctly removed`, 200))
-    .catch((error) => response.success(req, res, 'Internal Server Error', 500, error))
+    .catch((error) => response.error(req, res, 'Internal Server Error', 500, error))
 }
+
 module.exports = router;
