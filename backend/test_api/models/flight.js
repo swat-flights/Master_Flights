@@ -3,18 +3,29 @@ const mongoose = require("mongoose");
 const FlightSchema = new mongoose.Schema(
   {
     _id: {type:String, required:true},
-    price: {type: String, required: true},
-    operator: {type:String, required:true},
+
     departure: {type:String, required:true},
-    departure_time: String,
+    departure_date: {type:String, required:true},
+    departure_time: {type:String, required:true},
+    departure_icao: {type: String, required: true},
+    departure_city_name: {type: String, required: true},
+    departure_airport_name: {type: String, required: true},
+    departure_country: {type: String, required: true},
+
     arrival: {type:String, required:true},
-    arrival_time: String,
-    duration: {type:String, required:true},
-    origin: {type:String, required:true},
-    destination: {type:String, required:true},
+    arrival_date: {type:String, required:true},
+    arrival_time: {type:String, required:true},
+    arrival_icao: {type: String, required: true},
+    arrival_city_name: {type: String, required: true},
+    arrival_airport_name: {type: String, required: true},
+    arrival_country: {type: String, required: true},
+    
+    flight_duration: {type:String, required:true},
+    airline_name: [{type: String, required:true}],
+    price: {type: String, required: true},
     stops: String,
-    // flight_duration: Number,
     // flight_url: String,
+
     stopovers: [
       {
       stopover_departure: {type:String},
@@ -38,20 +49,43 @@ const FlightSchema = new mongoose.Schema(
   }
 );
 
-const Flight = mongoose.model('flights_v2', FlightSchema); // convert to model named Flight
+const Flight = mongoose.model('flights_v3', FlightSchema);
 
-module.exports = Flight; // export for controller use
+module.exports = Flight;
 
 /*
 EXAMPLE
 
 {
-  departure: "EZE",
-  departure_time: "18:35",
-  arrival: "MAD",
-  arrival_time: "13:10",
-  flight_duration: 875,
+  "_id": "2",
+
+  "departure": "GDL",
+  "departure_date": "2020-12-18",
+  "departure_time": "06:20:00",
+  "departure_icao": "MMGL",
+  "departure_city_name": "Guadalajara",
+  "departure_airport_name": "Miguel Hidalgo y Costilla",
+  "departure_country": "México",
+
+  "arrival": "BOG",
+  "arrival_date": "Sin fecha prevista de llegada",
+  "arrival_time": "Sin hora prevista de llegada",
+  "arrival_icao": "SKBO",
+  "arrival_city_name": "Bogotá",
+  "arrival_airport_name": "El Dorado",
+  "arrival_country": "Colombia",
+
+  "flight_duration": "15 HR 36 min",
+  "airline_name": [
+      "Aeromexico",
+      "LATAM"
+  ],
+  "price": "1500",
+  "prices": [],
+  "stopovers": [],
+
   flight_url: "an flight website url",
+
   stopovers: [
     {
     stopover_departure: "EZE",
