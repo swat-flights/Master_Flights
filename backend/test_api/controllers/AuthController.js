@@ -3,39 +3,57 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const register = (req, res, next) => {
-    bcrypt.hash(req.body.password, 10, function(err, hashedPass){
-        if (err) {
-            res.json({
-                error: err
-            });
-        } 
-
-        let user = new User ({
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            email: req.body.email,
-            phone: req.body.phone,
-            password: hashedPass
-        });
+    // validamos que el usuario no exista
+    User.exists({email: req.body.email}, (error, data) => {
+      if(error) {
+        return console.error("[controller ERROR]: " + error)
+      }
+      else {
+        if(data) {
+          return res.json({
+            message: "Usuario existente"
+          });
+        }
+        //si no existe lo creamos
+        if(!data) {
+          //encriptacion de contraseña
+          bcrypt.hash(req.body.password, 10, function(err, hashedPass){
+            if (err) {
+                res.json({
+                    error: err
+                });
+            } 
     
-        user.save()
-        .then(user =>{
-            res.json({
-                message: "Usuario creado satisfactoriamente!"
+            //modelos del usuario
+            let user = new User ({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                phone: req.body.phone,
+                password: hashedPass
+            });
+            
+            //almacenamiendo en db
+            user.save()
+            .then(user =>{
+                res.json({
+                    message: "Usuario creado satisfactoriamente!"
+                })
             })
-        })
-        .catch(error => {
-            res.json({
-                message: "Se presentaron problemas al crear el usuario!"
-            })
-        });
-    });   
+            .catch(error => {
+                res.json({
+                    message: "Se presentaron problemas al crear el usuario!"
+                })
+            });
+          });   
+        }
+      }
+    })
 }
 
 const login = (req, res, next)=>{
     var username = req.body.username;
     var password = req.body.password;
-    console.log(req.body)
     User.findOne({$or: [{email:username}, {phone: username}]})
     .then(user => {
         if (user) {
