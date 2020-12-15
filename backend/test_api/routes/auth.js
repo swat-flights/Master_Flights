@@ -6,7 +6,6 @@ const authenticate = require('../middleware/authenticate')
 
 router.post('/register', AuthController.register);
 router.post('/login', AuthController.login);
-router.post('/users', authenticate, AuthController.list);
-
+router.get('/users', authenticate, AuthController.list);
 
 module.exports = router;
