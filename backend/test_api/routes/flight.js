@@ -4,11 +4,11 @@ const response = require('../utils/response');
 const flightController = require('../controllers/flight');
 
 //routes
-router.get('/flight', list);
-router.get('/flight/:id', getOne)
-router.post('/flight', create);
-router.patch('/flight/:id', update)
-router.delete('/flight/:id', remove)
+router.get('/', list);
+router.get('/:id', getOne)
+router.post('/', create);
+router.patch('/:id', update)
+router.delete('/:id', remove)
 
 //routes handlers
 
