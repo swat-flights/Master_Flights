@@ -1,0 +1,86 @@
+@import '../../index.sass'
+  
+.AdminHeader
+  max-height: 15vh
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-around
+  align-items: center
+  padding-top: 5px
+  color: $primary-font-color
+  font-weight: 500
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
+
+  a
+    color: $primary-font-color
+    text-decoration: none
+  
+  &__logo
+    display: none
+
+  &__title
+    font-size: 20px
+
+  &__logout
+    a
+      display: flex
+      flex-direction: column
+      align-items: center
+      li
+        list-style: none
+        font-size: 12px
+        .material-icons
+          color: $secondary-color
+
+    a:hover
+      text-decoration: underline
+
+  hr
+    width: 100%
+    height: 6px
+    border: 0
+    background-color: $primary-color
+
+@media (min-width: $small-breakpoint)
+  .AdminHeader
+    font-weight: 600
+
+    &__logout
+      a
+        li
+          .material-icons
+            font-size: 32px
+      
+    &__logo
+      display: inline-block
+      width: 20%
+      max-width: 180px
+      a
+        p
+          display: none
+        picture
+          display: inline-block
+          img
+            width: 100%
+
+@media (min-width: $mid-breakpoint)
+  .AdminHeader
+    justify-content: space-between
+
+    &__logo
+      padding: 10px 5px 
+      margin-left: 60px 
+      a
+        p
+          display: inline-block
+    
+    &__logout
+      margin-right: 80px
+      a
+        li
+          font-size: 1rem
+        
+    &__title
+      font-size: 34px
+      position: relative
+      right: 8%

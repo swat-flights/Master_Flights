@@ -1,0 +1,84 @@
+@import '../../index.sass'
+
+.flightCard
+    max-width: 1000px
+    display: flex
+    align-items: center
+    border-radius: 12px
+    background-color: white
+    margin-bottom: 16px
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.25)
+
+    &__container
+        display: flex
+        width: 75%
+        justify-content: space-evenly
+        justify-items: center
+        align-items: center
+
+    hr
+        margin: 12px
+        height: 100px
+        border-style: solid
+
+    &__departure, &__destination
+
+        &__time
+            font-size: 24px
+
+        &__city
+            font-size: 18px
+            font-weight: 500
+
+        &__airport
+            font-size: 14px
+            font-weight: 400
+
+    &__duration
+        position: relative
+
+        hr
+            height: 0px
+            border-style: solid
+            border-bottom: 1.5px solid
+            border-top: 0px
+            border-left: 0px
+            border-right: 0px
+            margin: 12px 0px
+
+        img
+            position: absolute
+            bottom: 3px
+            right: 0px
+
+    &__price
+        display: flex
+        align-items: center
+        justify-content: space-around
+        width: 25%
+
+        span
+            font-size: 20px
+            font-weight: bold
+
+        &__title
+            display: none
+
+@media (max-width: $small-breakpoint)
+    .flightCard
+        display: block
+        padding: 24px 12px
+
+        &__container
+            width: 100%
+
+        &__price
+            display: block
+            width: 100%
+            hr
+                height: 0px
+
+            &__title
+                display: inline
+                margin: 34px
+      
