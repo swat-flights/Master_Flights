@@ -1,0 +1,72 @@
+@import '../../index.sass'
+  
+.Search
+  width: 100%
+  max-width: 640px
+  height: 270px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin-bottom: 80px
+  background-color: white
+  box-shadow: 1px 2px 4px 2px rgba(0,0,0,.15)
+
+  p
+    margin-bottom: 5px
+    font-size: 14px
+    font-weight: 600
+
+  &__title
+    text-align: center
+    margin: 0px
+    font-size: 34px
+
+  &__input
+    display: flex
+
+    input
+      border: 1px
+      border-style: solid
+      border-color: #41485E $dark-primary-color #41485E #41485E
+      border-top-left-radius: 12px
+      border-bottom-left-radius: 12px
+      padding-left: 25px
+      outline: none
+
+      &::placeholder
+        font-size: 16px
+        font-weight: 500
+        color: #41485E
+
+  button
+    padding: 10px 0.8em
+    border-top-right-radius: 12px
+    border-bottom-right-radius: 12px
+    background-color: $dark-primary-color
+    outline: none
+    cursor: pointer
+    border-style: none
+
+    &:hover
+      background-color: $primary-color
+
+    span
+      color: $light-background
+
+@media (min-width: $small-breakpoint)
+  .Search
+    margin: 0 auto
+    border-radius: 12px
+
+    &__input
+      width: 100%
+      max-width: 322px
+
+      input
+        width: 100%
+
+@media (min-width: $mid-breakpoint)
+  .Search
+    max-width: 950px
+    
