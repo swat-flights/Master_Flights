@@ -1,6 +1,6 @@
 // import flight model
 const Flight = require('../models/flight');
-
+require('dotenv').config();
 const { handleFlightData }= require('../utils/flightsHandlers/handleFlightData');
 
 // GET all flights
@@ -15,13 +15,51 @@ const getAllFlights = () => {
 }
 
 //filter by query params
-const filterFlights = (queryParams) => {
+const filterFlights = async(queryParams) => {
+  //----pagination----
+  //define API route
+  const API = `http://localhost:${process.env.PORT}/api/v1/flight`
+
+  //define a initial page and a the limit of documents we will return
+  const page = parseInt(queryParams.page) || 1
+  const limit = 5
+
+  // define a range of ducuments to return, from startIndex to endIndex
+  const startIndex = (page - 1) * limit
+  const endIndex = page * limit
+
+  //define main object that we will return to client
+  const results = {info: {}}
+
+  //delete page property to avoid errors on querying
+  delete queryParams.page
+
+  //get total documents we have as a result of querying by parameters define in frontend
+  const flightsFound = await Flight.find(queryParams).countDocuments().exec()
+
+  //while endIndex is less than flightsFound we will return a next page, if not, no
+  if (endIndex < flightsFound) {
+    results.info.next= `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&departure_date=${queryParams.departure_date}&page=${page + 1}`
+    results.info.limit = limit
+  }
+  
+  //while starIndex is bigger than 0 we will return a previus page, if not, no
+  if (startIndex > 0) {
+    results.info.prev = `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&departure_date=${queryParams.departure_date}&page=${page - 1}`
+  }
+
+  //also return total flights found and total pages
+  results.info.flightsFound = flightsFound
+  results.info.pages = Math.ceil(flightsFound / limit)
+
+  //----execute query-----
   return new Promise((resolve, reject) => {
     return Flight.find(queryParams, (error, data) => {
       error ? 
       reject(error)
-      :resolve(data)
-    })
+      :results.results = data
+      resolve(results)
+    }).limit(limit).skip(startIndex)
   })
 };
 
