@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+/* eslint-disable no-undef */
+/* eslint-disable react/destructuring-assignment */
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import FlightSearchBox from '../components/FlightSearchBox';
 import FilterMenu from '../components/FilterMenu';
@@ -7,13 +9,25 @@ import CollapsibleMenu from '../components/CollapsibleMenu';
 import Footer from '../components/Footer';
 import './styles/FlightResults.sass';
 
-const FlightResults = () => {
+const FlightResults = props => {
   const [status, setStatus] = useState('inactive');
+  const { from, departure, destination } = props.location.state;
+  const [flightData, setState] = useState([]);
 
   const switchForMenu = () => {
     if (status === 'active') setStatus('inactive');
     else setStatus('active');
   };
+
+  useEffect(() => {
+    fetch(
+      departure.length > 0
+        ? `http://localhost:3002/api/v1/flight?departure_date=${departure}&departure=${from}&arrival=${destination}`
+        : `http://localhost:3002/api/v1/flight?departure=${from}&arrival=${destination}`
+    )
+      .then(response => response.json())
+      .then(data => setState(data.body));
+  }, [departure]);
 
   return (
     <>
@@ -30,10 +44,9 @@ const FlightResults = () => {
         </button>
         <CollapsibleMenu status={status} changeStatus={switchForMenu} />
         <div className="results">
-          <FlightCard />
-          <FlightCard />
-          <FlightCard />
-          <FlightCard />
+          {flightData.slice(0, 5).map(item => (
+            <FlightCard data={item} />
+          ))}
         </div>
       </div>
       <Footer />
