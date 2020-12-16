@@ -1,0 +1,71 @@
+@import '../../index.sass'
+  
+.AdminForms
+  background-color: $light-background
+
+  &__Item
+    box-shadow: 1px 2px 4px 2px rgba(0,0,0,.25)
+    padding: 20px 12px
+    border-radius: 12px
+    margin-top: 8px
+    margin-bottom: 20px
+    background-color: white
+
+    p
+      width: 100%
+      font-weight: 600
+      margin-bottom: 10px
+
+  .days__container
+    width: 100%
+    display: grid
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr)
+    list-style: none
+    margin-bottom: 10px
+
+  &__TimeInput
+    margin-bottom: 30px
+
+  .admin-submit-button
+    border-radius: 0
+    background-color: $dark-primary-color
+    width: 100%
+    &:hover
+      background-color: $primary-color
+
+@media (min-width: $small-breakpoint)
+  .AdminForms
+    padding: 20px 12px
+
+    &__Item
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      padding: 22px 40px
+
+    &__TimeInput
+      &:last-child
+        width: 90%
+
+    .days__container
+      grid-template: repeat(2, 1fr) / repeat(4, 1fr)
+
+    .admin-submit-button
+      border-radius: 12px
+      max-width: 900px
+
+@media (min-width: $mid-breakpoint)
+  .AdminForms
+    padding-right: 6px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    
+    &__Item
+      padding: 30px 60px
+      max-width: 900px
+
+    .days__container
+      grid-template: repeat(1, 1fr) / repeat(7, 1fr)
+      column-gap: 10px

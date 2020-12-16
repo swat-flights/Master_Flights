@@ -1,0 +1,28 @@
+@import '../../index.sass'
+
+.Sidebar
+  width: 100%
+  height: 9vh
+  display: flex
+  align-items: center
+  justify-content: space-between
+  font-weight: 600
+  background-color: $secondary-color
+
+  &__button
+    margin-left: 1px 
+    margin-right: 1px 
+
+@media (min-width: $small-breakpoint)
+  .Sidebar  
+    justify-content: center
+
+@media (min-width: $mid-breakpoint)
+  .Sidebar
+    width: 30%
+    min-width: 15vw
+    max-width: 300px
+    height: inherit
+    flex-direction: column
+    justify-content: flex-start
+    padding: 0px 10px

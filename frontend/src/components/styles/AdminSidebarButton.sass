@@ -1,0 +1,41 @@
+@import '../../index.sass'
+
+.Sidebar__button
+  width: 50%
+  max-width: 260px
+  height: 9vh
+  max-height: 90px
+  background-color: $primary-color
+  border-style: none
+  outline: none
+  a 
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 14px
+    text-decoration: none
+    color: $light-background
+    .material-icons
+      margin-right: 5px
+      font-size: 18px
+    p
+      &:hover
+        text-decoration: underline
+
+  &:hover
+    background-color: $dark-primary-color
+    cursor: pointer
+
+@media (min-width: $mid-breakpoint)
+  .Sidebar__button
+    width: 100%
+    margin-top: 20px
+    margin-right: 0
+    border-radius: 40px
+    a
+      flex-wrap: wrap  
+      font-size: 20px
+      .material-icons
+        font-size: 28px
+        margin-right: 10px 
