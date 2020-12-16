@@ -1,39 +1,50 @@
 @import '../../index.sass'
 
 .searchForm
-    background-color: $secondary-color
-    border-top: 5px solid $dark-primary-color
+  background-color: $secondary-color
+  border-top: 5px solid $dark-primary-color
 
 .mainSection
-    background-color:
+  background-color:
+  display: flex
+  max-width: 1200px
+  margin: 40px auto
+  &__buttons
     display: flex
-    max-width: 1200px
-    margin: 40px auto
+    justify-content: flex-end
+    &__page
+      height: 38px
+      border-radius: 12px
+      margin-left: 16px
+      border-style: none
+      width: 150px
+      background-color: orange
+      color: white
+      font-weight: bold
 
 .sideMenu
-    width: 25%
-    margin: 0 18px
+  width: 25%
+  margin: 0 18px
 
 .results
-    width: 75%
-    margin-right: 18px
+  width: 75%
+  margin-right: 18px
 
 .filterBtn
-    display: none
-
+  display: none
 
 @media (max-width: $mid-breakpoint)
-    .mainSection
-        display: block
-        margin: 0px auto 40px 
+  .mainSection
+    display: block
+    margin: 0px auto 40px
 
     .sideMenu
-        display: none
+      display: none
 
     .results
-        width: 90%
-        margin: 0 auto
+      width: 90%
+      margin: 0 auto
 
     .filterBtn
-        display: block
-        margin: 16px 24px
+      display: block
+      margin: 16px 24px
