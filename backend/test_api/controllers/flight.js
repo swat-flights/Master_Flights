@@ -39,13 +39,15 @@ const filterFlights = async(queryParams) => {
 
   //while endIndex is less than flightsFound we will return a next page, if not, no
   if (endIndex < flightsFound) {
-    results.info.next= `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&departure_date=${queryParams.departure_date}&page=${page + 1}`
+    queryParams.departure_date? results.info.next= `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&departure_date=${queryParams.departure_date}&page=${page + 1}`
+    :results.info.next= `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&page=${page + 1}`
     results.info.limit = limit
   }
   
   //while starIndex is bigger than 0 we will return a previus page, if not, no
   if (startIndex > 0) {
-    results.info.prev = `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&departure_date=${queryParams.departure_date}&page=${page - 1}`
+    queryParams.departure_date? results.info.prev = `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&departure_date=${queryParams.departure_date}&page=${page - 1}`
+    :results.info.prev = `${API}?departure=${queryParams.departure}&arrival=${queryParams.arrival}&page=${page - 1}`
   }
 
   //also return total flights found and total pages
