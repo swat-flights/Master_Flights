@@ -30,6 +30,7 @@ h3, h5
 
 .SearchBox__form
     display: grid
+    align-items: center
     grid-template-columns: repeat(5, 1fr)
     &__item
         margin: 0 14px 0 0
@@ -41,7 +42,7 @@ h3, h5
             margin-bottom: 5px
         input
             border-radius: 12px
-            width: 80%
+            width: 100%
             border-style: none
             height: 38px
             padding: 0 0 0 40px
@@ -51,6 +52,8 @@ h3, h5
             color: black
             margin-top: 8px
             margin-left: 12px
+    a
+        height: 19px
     &__button
         align-self: flex-end
         input
@@ -73,7 +76,7 @@ h3, h5
             input
                 width: 100%
         &__item input
-                width: 90%
+                width: 100%
 
 
 @media (max-width: $small-breakpoint)

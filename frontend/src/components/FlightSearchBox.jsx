@@ -26,27 +26,43 @@ const FlightSearchBox = ({ noShadow }) => {
         <div>
           <form action="" className="SearchBox__form">
             <div className="SearchBox__form__item">
-              <label htmlFor="from">Origen</label>
+              <label htmlFor="browser">Origen</label>
               <span className="material-icons">trip_origin</span>
               <input
-                id="from"
+                list="browsers"
                 name="from"
-                type="text"
+                id="from"
                 placeholder="Ciudad Origen"
                 onChange={handleChange}
               />
+              <datalist id="browsers">
+                <option value="MEX">Ciudad de México</option>
+                <option value="BOG">Bogotá</option>
+                <option value="GDL">Guadalaraja</option>
+                <option value="MDE">Medellin</option>
+                <option value="MTY">Monterrey</option>
+                <option value="CLO">Cali</option>
+              </datalist>
             </div>
 
             <div className="SearchBox__form__item">
               <label htmlFor="destination">Destino</label>
               <span className="material-icons">location_on</span>
               <input
-                id="destination"
+                list="browsers"
                 name="destination"
-                type="text"
+                id="destination"
                 placeholder="Ciudad Destino"
                 onChange={handleChange}
               />
+              <datalist id="browsers">
+                <option value="MEX">Ciudad de México</option>
+                <option value="BOG">Bogotá</option>
+                <option value="GDL">Guadalaraja</option>
+                <option value="MDE">Medellin</option>
+                <option value="MTY">Monterrey</option>
+                <option value="CLO">Cali</option>
+              </datalist>
             </div>
 
             <div className="SearchBox__form__item">
